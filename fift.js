@@ -6,7 +6,6 @@ let timeDisplay;
 let secondsElapsed = 0;
 let gameInterval;
 let gridSize = 4;
-let currentBackground = "background1.jpg"; // Default background
 
 window.onload = function () {
     timeDisplay = document.getElementById("timer");
@@ -21,8 +20,8 @@ function initializeBoard() {
     board.style.width = `${400}px`;
     board.style.height = `${400}px`;
     board.style.position = "relative";
-    board.style.backgroundImage = `url(${currentBackground})`; // Set background for the grid
-    board.style.backgroundSize = `${400}px ${400}px`; // Ensure the background covers the grid
+    board.style.backgroundImage = `url(${currentBackground})`; // Use current background
+    board.style.backgroundSize = `${400}px ${400}px`;
 
     emptyX = (gridSize - 1) * tileSize;
     emptyY = (gridSize - 1) * tileSize;
@@ -31,17 +30,17 @@ function initializeBoard() {
     for (let i = 0; i < gridSize * gridSize - 1; i++) {
         const tile = document.createElement("div");
         tile.className = "tilePiece";
-        tile.style.width = `${tileSize - 2}px`; // Subtract border size
+        tile.style.width = `${tileSize - 2}px`;
         tile.style.height = `${tileSize - 2}px`;
         tile.style.left = `${(i % gridSize) * tileSize}px`;
         tile.style.top = `${Math.floor(i / gridSize) * tileSize}px`;
 
-        // Set background for the tile to show the correct section of the grid
+        // Set the correct section of the background image for the tile
         tile.style.backgroundImage = `url(${currentBackground})`;
-        tile.style.backgroundSize = `${400}px ${400}px`; // Cover the entire grid
+        tile.style.backgroundSize = `${400}px ${400}px`;
         tile.style.backgroundPosition = `-${(i % gridSize) * tileSize}px -${Math.floor(i / gridSize) * tileSize}px`;
 
-        tile.textContent = i + 1; // Set tile number (except for the last empty tile)
+        tile.textContent = i + 1; // Set tile number (except for the empty space)
         tile.addEventListener("click", () => moveTile(tile));
         board.appendChild(tile);
     }
@@ -49,8 +48,9 @@ function initializeBoard() {
     tileElements = document.querySelectorAll(".tilePiece");
 }
 
+
 function moveTile(tile) {
-    // Check if the tile can move adjacent to the empty space
+    // Check if the tile can move to the empty space
     if (canSlide(tile)) {
         swapTiles(tile);
         if (isComplete()) {
@@ -76,9 +76,6 @@ function swapTiles(tile) {
     tile.style.top = `${emptyY}px`;
     emptyX = parseInt(tempX, 10);
     emptyY = parseInt(tempY, 10);
-
-    // Update background position to move along with the tile
-    tile.style.backgroundPosition = `-${emptyX}px -${emptyY}px`;
 }
 
 function isComplete() {
@@ -100,7 +97,7 @@ function isComplete() {
 
 function declareVictory() {
     clearInterval(gameInterval);
-    alert(`Congratulations! You solved the puzzle in ${secondsElapsed} seconds.`);
+    alert(`🎉 Congratulations! You solved the puzzle in ${secondsElapsed} seconds.`);
 }
 
 function shuffleTiles() {
@@ -124,10 +121,7 @@ function getMovableTiles() {
 }
 
 function changeGrid() {
-    const newSize = prompt(
-        "Enter grid size (4, 6, 8, or 10):",
-        gridSize
-    );
+    const newSize = prompt("Enter grid size (4, 6, 8, or 10):", gridSize);
     if ([4, 6, 8, 10].includes(parseInt(newSize))) {
         gridSize = parseInt(newSize);
         initializeBoard();
@@ -135,8 +129,9 @@ function changeGrid() {
         alert("Invalid size. Please enter 4, 6, 8, or 10.");
     }
 }
-
-function changeBackground(image) {
-    currentBackground = image;
-    initializeBoard();
+let backgrounds = ['background.png', 'playground.jpg', 'cafe.jpg', 'school.jpg']; // Background image paths
+let currentBackground = backgrounds[0]; // Default background
+function changeBackground(selectedIndex) {
+    currentBackground = backgrounds[selectedIndex]; // Update current background
+    initializeBoard(); // Reinitialize the board with the new background
 }

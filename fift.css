@@ -7,11 +7,33 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+h1 {
+	text-align: center;
+}
 
 h2 {
 	text-align: center;
 	font-size: 26px;
 	color: #2F4F4F;
+}
+
+.rules {
+    margin-top: 20px; /* Space above the rules */
+    padding: 15px; /* Add padding inside */
+    background-color: #ffc0cb; /* Pink background */
+    border: 2px solid #ff6f91; /* Optional darker pink border */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center-align text */
+    color: #333; /* Dark text color for readability */
+    font-size: 14px;
+    line-height: 1.6; /* Add space between lines */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 300px; /* Optional: Limit width for better appearance */
+}
+.right-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align content */
 }
 
 .flex-container {
@@ -26,21 +48,33 @@ h2 {
 
 .right-section {
 	display: flex;
+	padding: 20px;
 	flex-direction: column;
 	align-items: center;
+}
+
+.background-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%; /* Adjust container size */
 }
 
 .image-option {
 	width: 100px;
 	height: 100px;
 	cursor: pointer;
-	margin: 10px 0;
+	
 	border: 2px solid transparent;
 	transition: border-color 0.3s;
 }
 
 .image-option:hover {
 	border-color: #5F9EA0;
+}
+
+
+#board {
+    transition: background-image 0.5s ease-in-out;
 }
 
 #gameBoard {
@@ -147,4 +181,19 @@ h2 {
 	100% {
 		transform: rotate(360deg);
 	}
+}
+.timer-display {
+	font-size: 18px;
+	color: #5F9EA0;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.audio-player {
+	margin-top: 20px;
+	text-align: center;
+}
+
+audio {
+	width: 100%;
 }

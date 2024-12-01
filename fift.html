@@ -18,17 +18,35 @@
 				<div id="timer" class="timer-display">Time: 0s</div>
 				<div id="board"></div>
 			</div>
-			<button id="mixButton" onclick="shuffleTiles()">Start Game</button>
+			<button id="mixButton" onclick="shuffleTiles()">Shuffle</button>
 			<button id="gridButton" onclick="changeGrid()">Change Grid</button>
 		</div>
 
 		<div class="right-section">
 			<h2>Select a Background</h2>
-			<img src="background.png" alt="Background 1" class="image-option" onclick="changeBackground('background1.jpg')">
-			<img src="playground.jpg" alt="Background 2" class="image-option" onclick="changeBackground('background2.jpg')">
-			<img src="cafe.jpg" alt="Background 3" class="image-option" onclick="changeBackground('background3.jpg')">
-			<img src="school.jpg" alt="Background 4" class="image-option" onclick="changeBackground('background4.jpg')">
+			<div class="background-container">
+				<img src="background.png" alt="Background 1" class="image-option" onclick="changeBackground(0)">
+				<img src="playground.jpg" alt="Background 2" class="image-option" onclick="changeBackground(1)">
+				<img src="cafe.jpg" alt="Background 3" class="image-option" onclick="changeBackground(2)">
+				<img src="school.jpg" alt="Background 4" class="image-option" onclick="changeBackground(3)">
+			</div>
 		</div>
+	</div>
+
+	<div class="ruels">
+		<p> The ruels of this game </p> <br>
+		<p>American puzzle author and mathematician Sam Loyd is often falsely credited with creating the puzzle; indeed,
+			Loyd claimed from 1891 until his death in 1911 that he invented it. The puzzle was actually created around
+			1784 by Noyes Palmer Chapman, a postmaster in Canastota, New York. </p>
+	</div>
+
+
+
+	<div class="audio-player">
+		<audio controls>
+			<source src="music.mp3" type="audio/mpeg">
+
+		</audio>
 	</div>
 </body>
 </html>
