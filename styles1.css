@@ -1,0 +1,80 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+#game-container {
+  display: flex;
+  justify-content: center; /* Centering the container */
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+#puzzle-board {
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  gap: 2px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32pt;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  cursor: pointer;
+}
+
+.tile.movablepiece {
+  border-color: red;
+  color: #006600;
+  text-decoration: underline;
+}
+
+#shuffle-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#shuffle-btn:active {
+  background-color: #1cf323;
+}
+
+p {
+  margin-top: 40px;
+  margin-left: 800px;
+}
+
+.tile {
+  background-image: url('playground.jpg');
+  background-size: 400px 400px; /* Ensure the image size fits the 4x4 grid */
+}
+
+.empty {
+  background-color: transparent; /* Blank tile should have no background */
+  border: none;
+}
+
+  
