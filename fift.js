@@ -128,14 +128,14 @@ function changeGrid() {
 		"Enter grid size (4, 6, 8, or 10):",
 		gridSize
 	);
-	const validSizes= [4,6,8,10];
-	if ([4, 6, 8, 10].includes(parseInt(newSize, 10))){
-		gridSize = parseInt(newSize, 10);
+	if ([4, 6, 8, 10].includes(parseInt(newSize))) {
+		gridSize = parseInt(newSize);
 		initializeBoard();
 	} else {
-		alert("Invalid size, please enter 4,6,8, 0r 10.");
+		alert("Invalid size. Please enter 4, 6, 8, or 10.");
 	}
 }
+
 
 function changeBackground(image) {
 	currentBackground = image;
