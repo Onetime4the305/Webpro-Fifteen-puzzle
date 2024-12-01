@@ -129,7 +129,7 @@ function changeGrid() {
         alert("Invalid size. Please enter 4, 6, 8, or 10.");
     }
 }
-let backgrounds = ['background.png', 'playground.jpg', 'cafe.jpg', 'school.jpg']; // Background image paths
+let backgrounds = ['background.png', 'playground.jpg', 'jungle.jpg', 'school.jpg']; // Background image paths
 let currentBackground = backgrounds[0]; // Default background
 function changeBackground(selectedIndex) {
     currentBackground = backgrounds[selectedIndex]; // Update current background
