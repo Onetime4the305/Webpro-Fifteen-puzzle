@@ -143,6 +143,7 @@ function changeBackground(image) {
 }
 
 //adding confetti
+/*
 
 function declareVictory() {
 	clearInverval(gameInterval);
@@ -180,4 +181,5 @@ function restartGame(){
 	initializeBoard();
 	shuffleTiles();
 }
+*/
 
