@@ -6,10 +6,12 @@ let timeDisplay;
 let secondsElapsed = 0;
 let gameInterval;
 let gridSize = 4;
+let movesCount = 0; //moves counter
 let currentBackground = "Background.png"
 
 window.onload = function () {
     timeDisplay = document.getElementById("timer");
+    movesDisplay = document.getElementById("moves");
     initializeBoard();
 };
 
@@ -54,6 +56,8 @@ function moveTile(tile) {
     // Check if the tile can move to the empty space
     if (canSlide(tile)) {
         swapTiles(tile);
+        movesCount++;
+        document.getElementById("moves").textContent = `Moves: ${movesCount}`;
         if (isComplete()) {
             declareVictory();
         }
@@ -104,6 +108,7 @@ function declareVictory() {
 function shuffleTiles() {
     secondsElapsed = 0;
     timeDisplay.textContent = "Time: 0s";
+    document.getElementById("moves").textContent = "Moves: 0";
     clearInterval(gameInterval);
     gameInterval = setInterval(() => {
         secondsElapsed++;

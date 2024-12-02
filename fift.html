@@ -24,6 +24,7 @@
 		<div class="left-section" id="game">
 			<div id="gameBoard">
 				<div id="timer" class="timer-display">Time: 0s</div>
+				<div id="moves" class="moves-display">Moves: 0</div>
 				<div id="board"></div>
 			</div>
 			<button id="mixButton" onclick="shuffleTiles()">Shuffle</button>
@@ -34,10 +35,11 @@
 		<div class="right-section">
 			<h2>Select a Background</h2>
 			<div class="background-container">
+
 				<img src="background.png" alt="Background 1" class="image-option" onclick="changeBackground('background.png')">
-				<img src="playground.jpg" alt="Background 2" class="image-option" onclick="changeBackground('school.jpg')">
+				<img src="playground.jpg" alt="Background 2" class="image-option" onclick="changeBackground('playground.jpg')">
 				<img src="jungle.jpg" alt="Background 3" class="image-option" onclick="changeBackground('jungle.jpg')">
-				<img src="school.jpg" alt="Background 4" class="image-option" onclick="changeBackground('background4.jpg')">
+				<img src="school.jpg" alt="Background 4" class="image-option" onclick="changeBackground('school.jpg')">
 			</div>
             <div class="audio-player">
                 <audio controls>
@@ -45,7 +47,9 @@
         
                 </audio>
             </div>
+
 		</div>
 	</div>
+
 </body>
 </html>
