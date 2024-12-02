@@ -9,6 +9,8 @@ let gridSize = 4;
 let movesCount = 0; //moves counter
 let currentBackground = "Background.png"
 
+
+
 window.onload = function () {
     timeDisplay = document.getElementById("timer");
     movesDisplay = document.getElementById("moves");
@@ -23,8 +25,6 @@ function initializeBoard() {
     board.style.width = `${400}px`;
     board.style.height = `${400}px`;
     board.style.position = "relative";
-     // Use current background
-    
 
     emptyX = (gridSize - 1) * tileSize;
     emptyY = (gridSize - 1) * tileSize;
@@ -136,6 +136,7 @@ function changeGrid() {
     }
 }
 
+
 function changeBackground(image){
     currentBackground = image;
     initializeBoard();
@@ -170,8 +171,6 @@ function togglePause() {
             
     }
 }
-
-
 
 
 
