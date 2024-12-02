@@ -1,16 +1,14 @@
-/* General Body Styling */
-body {
+body{
     background-color: #e6f7ff;
     font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content */
+    align-items: center;
 }
 
-/* Header Styling */
-.header {
+.header{
     background-color: #005f6a;
     padding: 20px;
     width: 100%;
@@ -19,15 +17,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+h1{
     margin: 0;
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* Tutorial Section */
-main {
+main{
     max-width: 800px;
     padding: 20px;
     margin: 20px;
@@ -36,26 +33,29 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.rules {
+.rules{
     margin: 20px 0;
 }
 
-.rules h2 {
+.rules{
+    margin: 20px 0;
+}
+
+.rules h2{
     text-align: center;
     font-size: 2rem;
     color: #005f6a;
     margin-bottom: 10px;
 }
 
-.rules p {
+.rules p{
     font-size: 1.2rem;
     color: #333;
     line-height: 1.8;
     margin: 10px 0;
 }
 
-/* Footer Styling */
-footer {
+footer{
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #005f6a;
@@ -65,13 +65,13 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-footer a {
+footer a{
     color: #ffcccb;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-footer a:hover {
+footer a:hover{
     text-decoration: underline;
 }
