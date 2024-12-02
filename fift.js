@@ -6,6 +6,9 @@ let timeDisplay;
 let secondsElapsed = 0;
 let gameInterval;
 let gridSize = 4;
+let currentBackground = "Background.png"
+
+
 
 window.onload = function () {
     timeDisplay = document.getElementById("timer");
@@ -20,8 +23,6 @@ function initializeBoard() {
     board.style.width = `${400}px`;
     board.style.height = `${400}px`;
     board.style.position = "relative";
-    board.style.backgroundImage = `url(${currentBackground})`; // Use current background
-    board.style.backgroundSize = `${400}px ${400}px`;
 
     emptyX = (gridSize - 1) * tileSize;
     emptyY = (gridSize - 1) * tileSize;
@@ -129,9 +130,42 @@ function changeGrid() {
         alert("Invalid size. Please enter 4, 6, 8, or 10.");
     }
 }
-let backgrounds = ['background.png', 'playground.jpg', 'jungle.jpg', 'school.jpg']; // Background image paths
-let currentBackground = backgrounds[0]; // Default background
-function changeBackground(selectedIndex) {
-    currentBackground = backgrounds[selectedIndex]; // Update current background
-    initializeBoard(); // Reinitialize the board with the new background
+
+
+function changeBackground(image){
+    currentBackground = image;
+    initializeBoard();
 }
+
+let isPaused = false;
+
+function togglePause() {
+    const pauseButton = document.getElementById("pauseButton");
+
+    if(isPaused){
+        //resume the game
+        gameInterval = setInterval(() => {
+            secondsElapsed++;
+            timeDisplay.textContent = `time: ${secondsElapsed}`;
+        }, 1000);
+        pauseButton.textContent = "pause";
+        isPaused = false;
+
+        tileElements.forEach(tile => {
+            tile.style.pointerEvents = "auto";
+
+        });
+    } else {
+            clearInterval(gameInterval);
+            pauseButton.textContent = "Resume";
+            isPaused = true;
+
+            tileElements.forEach(tile =>{
+                tile.style.pointerEvents = "none";
+            });
+            
+    }
+}
+
+
+
