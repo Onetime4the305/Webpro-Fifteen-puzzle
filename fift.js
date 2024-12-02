@@ -8,6 +8,8 @@ let gameInterval;
 let gridSize = 4;
 let currentBackground = "Background.png"
 
+
+
 window.onload = function () {
     timeDisplay = document.getElementById("timer");
     initializeBoard();
@@ -21,8 +23,6 @@ function initializeBoard() {
     board.style.width = `${400}px`;
     board.style.height = `${400}px`;
     board.style.position = "relative";
-     // Use current background
-    
 
     emptyX = (gridSize - 1) * tileSize;
     emptyY = (gridSize - 1) * tileSize;
@@ -131,6 +131,7 @@ function changeGrid() {
     }
 }
 
+
 function changeBackground(image){
     currentBackground = image;
     initializeBoard();
@@ -165,8 +166,6 @@ function togglePause() {
             
     }
 }
-
-
 
 
 

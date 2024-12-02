@@ -9,6 +9,9 @@ body{
     justify-content: center;
     min-height: 100vh;
 }
+h1 {
+	text-align: center;
+}
 
 .header{
     background-color: #5f9ea0;
@@ -19,19 +22,26 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
 h1{
     margin: 0;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 
+
+
+
+
 }
+
 
 h2{
     text-align: center;
     font-size: 1.5rem;
     color: #2f4f4f;
     margin-bottom: 10px;
+
 }
 
 .flex-container {
@@ -160,6 +170,7 @@ button:hover{
     margin-bottom: 20px;
 }
 
+
 nav ul{
     list-style: none;
     padding: 0;
@@ -185,3 +196,5 @@ nav ul li a {
 nav ul li a:hover{
     color: #ffc0cb;
 }
+
+
