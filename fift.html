@@ -12,22 +12,39 @@
 		<h1>Fifteen Puzzle Game</h1>
 	</div>
 
+    <!--Navigation Bar-->
+    <nav>
+        <ul>
+            <li><a href ="#game">Game</a></li>
+            <li><a href="tutorial.html">Rules</a></li>
+        </ul>
+    </nav>
+
 	<div class="flex-container">
-		<div class="left-section">
+		<div class="left-section" id="game">
 			<div id="gameBoard">
 				<div id="timer" class="timer-display">Time: 0s</div>
 				<div id="board"></div>
 			</div>
-			<button id="mixButton" onclick="shuffleTiles()">Start Game</button>
+			<button id="mixButton" onclick="shuffleTiles()">Shuffle</button>
 			<button id="gridButton" onclick="changeGrid()">Change Grid</button>
+            <button id="pauseButton" onclick="togglePause()">Pause</button>
 		</div>
 
 		<div class="right-section">
 			<h2>Select a Background</h2>
-			<img src="background1.jpg" alt="Background 1" class="image-option" onclick="changeBackground('background1.jpg')">
-			<img src="background2.jpg" alt="Background 2" class="image-option" onclick="changeBackground('background2.jpg')">
-			<img src="background3.jpg" alt="Background 3" class="image-option" onclick="changeBackground('background3.jpg')">
-			<img src="background4.jpg" alt="Background 4" class="image-option" onclick="changeBackground('background4.jpg')">
+			<div class="background-container">
+				<img src="background.png" alt="Background 1" class="image-option" onclick="changeBackground('background.png')">
+				<img src="playground.jpg" alt="Background 2" class="image-option" onclick="changeBackground('school.jpg')">
+				<img src="jungle.jpg" alt="Background 3" class="image-option" onclick="changeBackground('jungle.jpg')">
+				<img src="school.jpg" alt="Background 4" class="image-option" onclick="changeBackground('background4.jpg')">
+			</div>
+            <div class="audio-player">
+                <audio controls>
+                    <source src="music.mp3" type="audio/mpeg">
+        
+                </audio>
+            </div>
 		</div>
 	</div>
 </body>

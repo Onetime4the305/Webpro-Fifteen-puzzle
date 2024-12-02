@@ -1,56 +1,95 @@
-body {
-	background-color: #c3e0e5;
-	font-family: "Arial", sans-serif;
-	font-size: 15px;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
+body{
+    background-color: #c3e0e5;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-h2 {
-	text-align: center;
-	font-size: 26px;
-	color: #2F4F4F;
+.header{
+    background-color: #5f9ea0;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1{
+    margin: 0;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+}
+
+h2{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #2f4f4f;
+    margin-bottom: 10px;
 }
 
 .flex-container {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
-.left-section, .right-section {
-	padding: 20px;
+.left-section, .right-section{
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.right-section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+#gameBoard{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    border: 4px solid #5f9ea0;
+    margin: 20px, auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.image-option {
-	width: 100px;
-	height: 100px;
-	cursor: pointer;
-	margin: 10px 0;
-	border: 2px solid transparent;
-	transition: border-color 0.3s;
+.left-section{
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.image-option:hover {
-	border-color: #5F9EA0;
+.mixButton{
+    margin-top: 20px;
+
 }
 
-#gameBoard {
-	position: relative;
-	width: 400px;
-	height: 400px;
-	margin-bottom: 20px; /* Adds space below the grid */
-}
-
-#mixButton, #gridButton {
+#mixButton, #gridButton, #pauseButton {
 	width: 400px;
 	padding: 12px;
 	background-color: #8FBC8F;
@@ -62,89 +101,87 @@ h2 {
 	margin-top: 15px; /* Adds space between buttons and grid */
 }
 
-#mixButton:hover, #gridButton:hover {
-	background-color: #6B8E23;
+#mixButton:hover, #gridButton:hover, #pauseButton:hover {
+    background-color: #6B8E23;
 }
 
 .tilePiece {
-	background-size: cover;
-	border: 1px solid #000;
-	position: absolute;
-	text-align: center;
-	line-height: 95px;
-	cursor: pointer;
-	transition: left 0.3s ease, top 0.3s ease;
+    background-size: cover;
+    border: 1px solid #000;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    transition: left 0.3s ease, top 0.3s ease;
 }
 
-.timer-display {
-	font-size: 18px;
-	color: #5F9EA0;
-	text-align: center;
-	margin-bottom: 10px;
+.timer-display{
+    font-size: 18px;
+    color: #5f9ea0;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-#victoryModal{
-	display: none;
-	position: fixed;
-	z-index: 1000;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	text-align: center;
-	font-size: 18px;
+button{
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #8fbc8f;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
 }
 
-#victoryModal button {
-	margin-top: 10px;
-	padding: 10px 20px;
-	background-color: #FFB6C1;
-	border: none;
-	color: white;
-	font-size: 16px;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s;
+button:hover{
+    background-color: #6b8e23;
+
 }
 
-#victoryModal button:hover{
-	background-color: #770737
+.image-option{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: transform 0.3 ease, border-color 0.3 ease;
 }
 
-.confetti-container {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	z-index: 999;
-	pointer-events: none;
+.image-option:hover{
+    transform: scale(1.1);
+    border-color: #5f9ea0;
 }
 
-.confetti{
-	position: absolute;
-	width: 10px;
-	height: 10px;
-	background-color: #89cff0;
-	animation: fall 2s infinite, spin 2s infinite;
+.timer-display{
+    font-size: 1.2rem;
+    color: #2f4f4f;
+    margin-bottom: 20px;
 }
 
-@keyframes fall {
-	0%{
-		top: -10%;
-	}
-	100% {
-		top: 110%;
-	}
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #5f9ea0;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+nav ul li{
+    margin: 0 15px;
 }
 
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
 
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+nav ul li a:hover{
+    color: #ffc0cb;
 }
